@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>跑马灯...</title>
+    
+    <style>
+        #move{
+            position: absolute;
+            width: 800px;
+            height: 50px;
+            top: 200px;
+            font-size: 50px;
+        }
+    </style>
+
+    <script>
+        window.onload=function(){
+            moves=document.getElementById("move");
+            moves.style.left=screen.width+'px';
+            moveItRight();
+        }
+
+        function moveItRight(){
+            if(parseInt(moves.style.left)<-(moves.offsetWidth)){
+                moves.style.left=screen.width+'px';
+            }
+
+            moves.style.left=(parseInt(moves.style.left)-5)+"px";
+
+            setTimeout("moveItRight()",10);
+        }
+    </script>
+</head>
+<body>
+    <div id="move">第一个JavaScript跑马灯效果！！！</div>
+</body>
+</html>
